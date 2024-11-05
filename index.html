@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scary AI Website</title>
+    <style>
+        body {
+            background-image: url('https://files.cdn-files-a.com/ready_uploads/media/9405860/normal_6386959be7bb2.jpg');
+            background-size: cover;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            animation: flicker 1.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        .container {
+            margin: 50px auto;
+            max-width: 600px;
+            padding: 20px;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        button {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #cc0000;
+        }
+
+        #aiResponse {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #ff0000;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 1em;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Scary AI Website</h1>
+        <p>Enter a thought or fear, and we'll generate a scary response!</p>
+        <textarea id="userInput" placeholder="Type here..."></textarea>
+        <button id="submitButton">Submit</button>
+        <h2>Scary Response:</h2>
+        <p id="aiResponse"></p>
+    </div>
+    <footer>
+        <p>© 2024 Rights of Nasser. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+            const userInput = document.getElementById('userInput').value;
+            const aiResponse = generateScaryResponse(userInput);
+            document.getElementById('aiResponse').innerText = aiResponse;
+        });
+
+        function generateScaryResponse(input) {
+            const scaryResponses = [
+                "Did you hear that sound at night? Perhaps something in the dark is watching you.",
+                "Remember, don't look behind you. The things you fear are closer than you think.",
+                "Do you feel cold? This is not just a change in weather.",
+                "Sometimes, there are things in our world that can't be explained.",
+                "Avoid dark places, you might find something unexpected waiting for you.",
+                "What was that whisper? It felt like it came from right behind you.",
+                "The shadows seem to move, don't they? Or is it just your imagination?",
+                "Have you ever seen a figure out of the corner of your eye?",
+                "They say the spirits never rest. Are they watching you now?",
+                "The door creaked open by itself. Did you forget to lock it?",
+                "What happens when you sleep? You might not want to know.",
+                "Do you believe in ghosts? You might meet one tonight.",
+                "The old mirror in the attic reflects things that aren't there.",
+                "Footsteps echoing behind you are never a good sign.",
+                "The chill in the air is more than just a breeze.",
+                "When you hear a knock, don't answer it. You might not like who's there.",
+                "Do you feel like someone is following you? Because they are.",
+                "The dark holds secrets that are better left alone.",
+                "You thought you were alone, but the laughter tells another story.",
+                "The scratching at the window might be something you don’t want to see.",
+                "Is it just the wind, or is someone calling your name?",
+                "The house creaks and groans, but is it alive?",
+                "Sometimes, the silence speaks louder than words.",
+                "The clock strikes midnight, and something awakens.",
+                "You never really know what's hiding in your closet.",
+                "Your reflection might not be your own.",
+                "Have you ever felt the breath of someone right behind you?",
+                "The shadows dance, but do they have a mind of their own?",
+                "You might want to check under your bed. Just in case.",
+                "Not all doors should be opened, especially the ones that are locked.",
+                "The darkness can be a comforting place, until it isn't.",
+                "You think you're safe, but the darkness has a way of finding you.",
+                "When the lights go out, the real fear begins."
+            ];
+            const randomIndex = Math.floor(Math.random() * scaryResponses.length);
+            return scaryResponses[randomIndex];
+        }
+    </script>
+</body>
+</html>
